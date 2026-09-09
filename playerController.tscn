@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://vc5hawadfs0b"]
+
+[ext_resource type="Script" uid="uid://dhx1xgfsq1g2t" path="res://PlayerController.cs" id="1_slsw2"]
+[ext_resource type="Script" uid="uid://bmuh83qbo7aal" path="res://CameraSystem.cs" id="2_8nycb"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4tr1e"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_slsw2"]
+sky_material = SubResource("ProceduralSkyMaterial_4tr1e")
+
+[sub_resource type="Environment" id="Environment_8nycb"]
+background_mode = 2
+sky = SubResource("Sky_slsw2")
+glow_enabled = true
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_cfw54"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_671u4"]
+
+[node name="Node3D" type="CharacterBody3D" unique_id=862396738]
+collision_layer = 2
+script = ExtResource("1_slsw2")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1019839712]
+environment = SubResource("Environment_8nycb")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=180119197]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=690197085]
+mesh = SubResource("CapsuleMesh_cfw54")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=99049726]
+shape = SubResource("CapsuleShape3D_671u4")
+
+[node name="CameraPivot" type="Node3D" parent="." unique_id=151681249]
+transform = Transform3D(0.7071067, 0, 0.7071067, 0, 1, 0, -0.7071067, 0, 0.7071067, 0, 1, 0)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CameraPivot" unique_id=1054457280]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.70710677, 0.7071067, 0, -0.70710677, 0.7071067, 0, 0.15133941, 0)
+spring_length = 50.0
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot/SpringArm3D" unique_id=1439888362]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, -2.9802322e-08, 0, 5.9604645e-08, 1, 0, 3.5762787e-07, -1.1920929e-07)
+current = true
+fov = 10.6
+near = 4.374
+
+[node name="CameraSystem" type="Node3D" parent="." unique_id=418856478]
+script = ExtResource("2_8nycb")
