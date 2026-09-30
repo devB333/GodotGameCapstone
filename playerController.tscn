@@ -2,12 +2,13 @@
 
 [ext_resource type="Script" uid="uid://dhx1xgfsq1g2t" path="res://PlayerController.cs" id="1_slsw2"]
 [ext_resource type="Script" uid="uid://bmuh83qbo7aal" path="res://CameraSystem.cs" id="2_8nycb"]
+[ext_resource type="Script" uid="uid://bl0brbhfibwch" path="res://Camera3d.cs" id="2_w25kc"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_cfw54"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_671u4"]
 
-[node name="Node3D" type="CharacterBody3D" unique_id=862396738]
+[node name="CharBody" type="CharacterBody3D" unique_id=862396738]
 collision_layer = 2
 script = ExtResource("1_slsw2")
 
@@ -29,6 +30,7 @@ transform = Transform3D(1.0000001, 0, 0, 0, 1, -2.9802322e-08, 0, 5.9604645e-08,
 current = true
 fov = 10.6
 near = 4.374
+script = ExtResource("2_w25kc")
 
 [node name="CameraSystem" type="Node3D" parent="." unique_id=418856478]
 script = ExtResource("2_8nycb")
