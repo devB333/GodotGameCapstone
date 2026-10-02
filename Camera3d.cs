@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using System.Collections.Generic;
+using System.Xml;
 
 
 
@@ -81,12 +82,18 @@ public partial class Camera3d : Camera3D
 	{// this will bring back the wall.
 		if (obj is OcclusionGroup)
 		{
-			
+			List<MeshInstance3D> meshes = findAllMeshes(obj);
+
+			foreach (MeshInstance3D currMesh in meshes)
+			{
+				if (currMesh.MaterialOverride)
+			}
 		}
 		else
 		{
 			MeshInstance3D mesh = (MeshInstance3D) obj.GetNode("MeshInstance3D");
-			if(mesh.MaterialOverride)
+			
+			for (int i = 0; i < mesh.Mesh.GetSurfaceCount(); i++)
 			{
 				
 			}
@@ -96,7 +103,10 @@ public partial class Camera3d : Camera3D
 
 	private void fadeObj(Node obj)
 	{
-		
+		if (obj is OcclusionGroup)
+		{
+			
+		}
 	}
 
 	private Node detectIfComposite(Node current)
@@ -115,6 +125,28 @@ public partial class Camera3d : Camera3D
 
 		return orignalCollider;// there was no OcclusionGroup found so the collisonObject must be a body, so return that
 		
+	}
+
+	private List<MeshInstance3D> findAllMeshes (Node root)
+	{
+		Queue<Node> nodeTrace = new Queue<Node>();
+
+		List<MeshInstance3D> meshes = new List<MeshInstance3D>();
+
+		nodeTrace.Enqueue(root);
+
+		while (nodeTrace.Count > 0)
+		{
+			Node current = nodeTrace.Dequeue();
+
+			if (current is MeshInstance3D)
+				meshes.Add((MeshInstance3D) current);
+
+			foreach (Node node in current.GetChildren())
+				nodeTrace.Enqueue(node);
+		}
+
+		return meshes;
 	}
 
 }
