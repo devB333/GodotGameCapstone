@@ -87,6 +87,9 @@ public partial class Camera3d : Camera3D
 		{
 			MeshInstance3D mesh = (MeshInstance3D) obj.GetNode("MeshInstance3D");
 			if(mesh.MaterialOverride)
+			{
+				
+			}
 		}
 	}
 
