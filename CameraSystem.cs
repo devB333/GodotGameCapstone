@@ -23,7 +23,7 @@ public partial class CameraSystem : Node3D
 		{
 			InputEventMouseMotion mouse = (InputEventMouseMotion) @event;
 			Vector2 movement = mouse.ScreenRelative; // vector 2 of how the mouse has moved. Tells you how much the mouse has moved since the last frame
-			GD.Print(movement.X);// we only care about the x movement
+			//GD.Print(movement.X);// we only care about the x movement
 			cameraMove(movement);
 		}
     }
