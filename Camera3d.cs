@@ -2,11 +2,12 @@ using Godot;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Xml;
 
 
 
 
+//----------------------------------------------------------
+//This script handles camera occulsion for objs in the cameras way
 public partial class Camera3d : Camera3D
 {
 
