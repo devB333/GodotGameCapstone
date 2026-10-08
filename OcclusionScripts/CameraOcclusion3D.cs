@@ -8,7 +8,7 @@ using System.Linq;
 
 //----------------------------------------------------------
 //This script handles camera occulsion for objs in the cameras way
-public partial class Camera3d : Camera3D
+public partial class CameraOcclusion3D : Camera3D
 {
 
 	[Export] public Node3D Target;
@@ -241,7 +241,7 @@ public partial class Camera3d : Camera3D
 		{
 			Node current = nodeTrace.Dequeue();
 
-			if (current is MeshInstance3D)
+			if (current is MeshInstance3D && !(current is IgnoreOcclusion))
 				meshes.Add((MeshInstance3D) current);
 
 			foreach (Node node in current.GetChildren())

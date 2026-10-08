@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bn5ak2mb7n6t3"
-path="res://.godot/imported/firstWall.glb-3279205ae1ad425eca3f59861c6c2fc6.scn"
+path="res://.godot/imported/firstWall.glb-155377afe695bdb04d54e7543a0da07d.scn"
 
 [deps]
 
-source_file="res://newTextures/firstWall.glb"
-dest_files=["res://.godot/imported/firstWall.glb-3279205ae1ad425eca3f59861c6c2fc6.scn"]
+source_file="res://Assests/firstWall.glb"
+dest_files=["res://.godot/imported/firstWall.glb-155377afe695bdb04d54e7543a0da07d.scn"]
 
 [params]
 
