@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="IsoMetricCamera"
-run/main_scene="uid://d1cdg64tpgqrf"
+run/main_scene="uid://b5548jw7rad0b"
 config/features=PackedStringArray("4.7", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
