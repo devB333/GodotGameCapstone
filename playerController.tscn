@@ -2,13 +2,14 @@
 
 [ext_resource type="Script" uid="uid://dhx1xgfsq1g2t" path="res://PlayerController.cs" id="1_slsw2"]
 [ext_resource type="Script" uid="uid://bmuh83qbo7aal" path="res://CameraSystem.cs" id="2_8nycb"]
-[ext_resource type="Script" uid="uid://bl0brbhfibwch" path="res://Camera3d.cs" id="2_w25kc"]
+[ext_resource type="Script" uid="uid://bl0brbhfibwch" path="res://OcclusionScripts/CameraOcclusion3D.cs" id="2_w25kc"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_cfw54"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_671u4"]
 
 [node name="CharBody" type="CharacterBody3D" unique_id=862396738]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 collision_layer = 2
 script = ExtResource("1_slsw2")
 
@@ -24,12 +25,12 @@ transform = Transform3D(0.7071067, 0, 0.7071067, 0, 1, 0, -0.7071067, 0, 0.70710
 [node name="SpringArm3D" type="SpringArm3D" parent="CameraPivot" unique_id=1054457280]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.70710677, 0.7071067, 0, -0.70710677, 0.7071067, 0, 0.15133941, 0)
 collision_mask = 128
-spring_length = 50.0
+spring_length = 100.0
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot/SpringArm3D" unique_id=1439888362]
 transform = Transform3D(1.0000001, 0, 0, 0, 1, -2.9802322e-08, 0, 5.9604645e-08, 1, 0, 3.5762787e-07, -1.1920929e-07)
 current = true
-fov = 10.6
+fov = 7.9
 near = 4.374
 script = ExtResource("2_w25kc")
 
