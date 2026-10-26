@@ -1,17 +1,58 @@
 [gd_scene format=3 uid="uid://dothmn63lwyq8"]
 
-[node name="Control" type="Control" unique_id=272957306]
+[ext_resource type="FontFile" uid="uid://behd1ayigjyl" path="res://GUI/Fonts/Color Basic.otf" id="1_cnjlq"]
+[ext_resource type="Script" uid="uid://c01xcbhhftoo0" path="res://GUI/Menu.cs" id="1_tvy18"]
+[ext_resource type="FontFile" uid="uid://b13e77ty0628u" path="res://GUI/Fonts/HomeVideo-Regular.ttf" id="3_12752"]
+
+[node name="menu" type="Control" unique_id=272957306]
+process_mode = 3
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_tvy18")
 
 [node name="Panel" type="Panel" parent="." unique_id=1082093470]
+process_mode = 2
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.99700004
 anchor_bottom = 1.0
 offset_right = 3.4559326
 offset_bottom = 1.0
+
+[node name="Label" type="Label" parent="." unique_id=261224116]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.381
+anchor_right = 0.619
+anchor_bottom = 0.113000005
+offset_left = -0.41201782
+offset_right = 0.4119873
+offset_bottom = -0.22400665
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_cnjlq")
+theme_override_font_sizes/font_size = 60
+text = "Paused"
+
+[node name="Button" type="Button" parent="." unique_id=1459832272]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.39600003
+anchor_top = 0.43
+anchor_right = 0.60400003
+anchor_bottom = 0.57000005
+offset_left = 19.307983
+offset_top = 6.8599854
+offset_right = -19.308044
+offset_bottom = -6.8600464
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_12752")
+theme_override_font_sizes/font_size = 60
+text = "Resume"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
