@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://67y1ic2p8umu"
-path="res://.godot/imported/WorkInProgressBendWall.glb-fd54c9a129ecb39c517ab8c3b94351d0.scn"
+uid="uid://b6hndj75gda0x"
+path="res://.godot/imported/serverRackAttempt1.glb-41f7b0a93f5425ba89a9185e54dc8a9c.scn"
 
 [deps]
 
-source_file="res://Assests/WorkInProgressBendWall.glb"
-dest_files=["res://.godot/imported/WorkInProgressBendWall.glb-fd54c9a129ecb39c517ab8c3b94351d0.scn"]
+source_file="res://Assests/serverRackAttempt1.glb"
+dest_files=["res://.godot/imported/serverRackAttempt1.glb-41f7b0a93f5425ba89a9185e54dc8a9c.scn"]
 
 [params]
 
