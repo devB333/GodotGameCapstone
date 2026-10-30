@@ -43,7 +43,7 @@ _subresources={
 "animations": {
 "idle": {
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://Assests/idle.res",
+"save_to_file/fallback_path": "res://Assests/Player/idle.res",
 "save_to_file/keep_custom_tracks": "",
 "save_to_file/path": "uid://ccvwj4kgudsle",
 "settings/loop_mode": 0,
