@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://vc5hawadfs0b" path="res://Scenes/playerController.tscn" id="1_lbjce"]
 [ext_resource type="PackedScene" uid="uid://bn5ak2mb7n6t3" path="res://Assests/Walls/firstWall.glb" id="2_skn36"]
 [ext_resource type="Texture2D" uid="uid://chufl0uiteosy" path="res://icon.svg" id="3_5q4c5"]
-[ext_resource type="Script" uid="uid://d2nbyklv2xlhc" path="res://Assests/Walls/TryDoor.cs" id="3_71d4q"]
+[ext_resource type="Script" uid="uid://d2nbyklv2xlhc" path="res://Scripts/State/DoorState/TryDoor.cs" id="3_71d4q"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lbjce"]
 sky_top_color = Color(0.4095782, 0.40585238, 0.46516585, 1)
@@ -38,9 +38,10 @@ size = Vector3(100, 0.5, 100)
 [node name="CharBody" parent="." unique_id=862396738 instance=ExtResource("1_lbjce")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 2.0835862, 0)
 
-[node name="TryDoor" parent="." unique_id=700289307 instance=ExtResource("2_skn36")]
+[node name="TryDoor" parent="." unique_id=700289307 node_paths=PackedStringArray("states") instance=ExtResource("2_skn36")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.26455, 3.050001, -8.81917)
 script = ExtResource("3_71d4q")
+states = []
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1405401052]
 transform = Transform3D(-0.011264496, 0, -0.9999366, 0, 1, 0, 0.9999366, 0, -0.011264496, 30.137785, 10.218751, 0)
