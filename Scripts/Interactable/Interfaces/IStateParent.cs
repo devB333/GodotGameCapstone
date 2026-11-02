@@ -19,5 +19,9 @@ public interface IStateParent
 
 public interface IParentTriggerStateChange
 {
+    /**
+     * This is the entry method that an interactable button will use for a simple state change
+     * Like clicking a door and just opening or closing it
+     */
     public abstract void parentTriggerStateChange();
 }

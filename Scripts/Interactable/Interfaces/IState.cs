@@ -5,7 +5,7 @@ using System;
 public  abstract partial class IState: Node
 {
  public Node node = null;
- public string name = "";
+ public string name { get; set; } = null;
  
  public abstract void Enter();
  public abstract void Exit();
@@ -19,20 +19,25 @@ public  abstract partial class IState: Node
     stateParent.switch_state(name);
   }
  }
+ 
+     public interface IOptionalTriggerStateChange
+    {
+        /**
+        * This method is used if you need a trigger that just changes state
+        * Like a button click on the ui
+        */
+        public abstract void triggerStateChange();
+    }
+     
+    public interface IOptionalInput
+    {
+        /**
+         * This method is used if there is an input associated with a specific state.
+         */
+        public abstract void input(InputEvent evt);
+    }
 }
 
-public interface IOptionalTriggerStateChange
-{
-    /**
-    * This method is used if you need a trigger that just changes state
-    */
-    public abstract void triggerStateChange();
-}
 
-public interface IOptionalInput
-{
-    /**
-     * This method is used if there is an input associated with a specific state. 
-     */
-    public abstract void input(InputEvent evt);
-}
+
+

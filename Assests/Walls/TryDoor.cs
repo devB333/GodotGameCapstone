@@ -2,7 +2,7 @@ using Godot;
 using System;
 using System.Collections.Generic;
 
-public partial class TryDoor : Node3D, IStateParent
+public partial class TryDoor : Node3D, IStateParent, IParentTriggerStateChange
 {
 	public Guid id { get; } =  Guid.NewGuid();// unique guid for Global Registry
 	public IState activeState { get; set; } = null;
@@ -15,8 +15,12 @@ public partial class TryDoor : Node3D, IStateParent
 	{
 		foreach (IState state in states)
 		{
-			
+			state.node = this;
+			stateNameMap.Add(state.name, state);
 		}
+
+		activeState = stateNameMap["closed"];
+		activeState.Enter();
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -27,5 +31,13 @@ public partial class TryDoor : Node3D, IStateParent
 	public void switch_state(string stateName)
 	{
 		activeState = stateNameMap[stateName];
+	}
+
+	public void parentTriggerStateChange()
+	{
+		if (activeState is IState.IOptionalTriggerStateChange stateChange)
+		{
+			stateChange.triggerStateChange();
+		}
 	}
 }
