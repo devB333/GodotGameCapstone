@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://x5v5ah7uqn6v"]
+
+[ext_resource type="PackedScene" uid="uid://vc5hawadfs0b" path="res://Scenes/playerController.tscn" id="1_lbjce"]
+[ext_resource type="PackedScene" uid="uid://bn5ak2mb7n6t3" path="res://Assests/Walls/firstWall.glb" id="2_skn36"]
+[ext_resource type="Texture2D" uid="uid://chufl0uiteosy" path="res://icon.svg" id="3_5q4c5"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lbjce"]
+sky_top_color = Color(0.4095782, 0.40585238, 0.46516585, 1)
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0.592728, 0.68995476, 0.72222155, 1)
+
+[sub_resource type="Sky" id="Sky_ctnup"]
+sky_material = SubResource("ProceduralSkyMaterial_lbjce")
+
+[sub_resource type="Environment" id="Environment_skn36"]
+background_mode = 2
+sky = SubResource("Sky_ctnup")
+glow_enabled = true
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_0phxh"]
+viewport_path = NodePath("Sprite3D/SubViewport")
+
+[node name="Dev" type="Node3D" unique_id=2057609720]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=627920930]
+environment = SubResource("Environment_skn36")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=618224132]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1382290369]
+use_collision = true
+size = Vector3(100, 0.5, 100)
+
+[node name="CharBody" parent="." unique_id=862396738 instance=ExtResource("1_lbjce")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 2.0835862, 0)
+
+[node name="firstWall" parent="." unique_id=700289307 instance=ExtResource("2_skn36")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.26455, 3.050001, -8.81917)
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1405401052]
+transform = Transform3D(-0.011264496, 0, -0.9999366, 0, 1, 0, 0.9999366, 0, -0.011264496, 30.137785, 10.218751, 0)
+texture = SubResource("ViewportTexture_0phxh")
+
+[node name="SubViewport" type="SubViewport" parent="Sprite3D" unique_id=161349486]
+
+[node name="Control" type="Control" parent="Sprite3D/SubViewport" unique_id=239551661]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Sprite3D/SubViewport/Control" unique_id=88931886]
+custom_minimum_size = Vector2(0, 512)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_5q4c5")
