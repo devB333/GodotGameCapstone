@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://k6n2xmelcbod"
+=======
+uid="uid://dx8lq2sdein3v"
+>>>>>>> 83ac1dd33e16130b67af0bb8bade7ec40d105430
 path="res://.godot/imported/WorkInProgressBendWall_Wood028_1K-PNG_Color.png-d5cd5958fe1f75de2c44ebb009e42e28.ctex"
 metadata={
 "vram_texture": false
