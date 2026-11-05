@@ -8,7 +8,6 @@ public partial class CloseDoor : IState, IState.IOptionalTriggerStateChange
 		if (node is Node3D node3D)
 		{
 			node3D.Quaternion = Quaternion.Identity;
-
 		}
 	}
 

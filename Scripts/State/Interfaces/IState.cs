@@ -2,7 +2,7 @@ using Godot;
 using System;
 
 
-public  abstract partial class IState: Node
+public abstract partial class IState: Node
 {
  public Node node = null;
  public string name { get; set; } = null;
