@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://chyqjx8cncya8"
-path="res://.godot/imported/doorAttempt1.glb-77b5abf1f181b45a5871591c00107d46.scn"
+uid="uid://dur8lkvglvc2m"
+path="res://.godot/imported/metalDoorAttempt1.glb-3e70c73d59f7eae231070f16d1051827.scn"
 
 [deps]
 
-source_file="res://Assests/doorAttempt1.glb"
-dest_files=["res://.godot/imported/doorAttempt1.glb-77b5abf1f181b45a5871591c00107d46.scn"]
+source_file="res://Assests/doors/metalDoorAttempt1.glb"
+dest_files=["res://.godot/imported/metalDoorAttempt1.glb-3e70c73d59f7eae231070f16d1051827.scn"]
 
 [params]
 
@@ -19,7 +19,7 @@ nodes/root_script=null
 mesh_library/use_node_names_as_mesh_names=false
 array_mesh/deduplicate_surfaces=true
 nodes/apply_root_scale=true
-nodes/root_scale=0.001
+nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
 nodes/use_name_suffixes=true
 nodes/use_node_type_suffixes=true
