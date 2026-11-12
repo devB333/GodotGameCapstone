@@ -3,6 +3,12 @@ using System;
 
 public partial class OpenDoor : IState, IState.IOptionalTriggerStateChange
 {
+	
+	public override void _Ready()
+	{
+		this.name = "open";
+	}
+	
 	public override void Enter()
 	{
 		if (node is Node3D node3D)

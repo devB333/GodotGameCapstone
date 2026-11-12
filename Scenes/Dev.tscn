@@ -4,6 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://bn5ak2mb7n6t3" path="res://Assests/Walls/firstWall.glb" id="2_skn36"]
 [ext_resource type="Texture2D" uid="uid://chufl0uiteosy" path="res://icon.svg" id="3_5q4c5"]
 [ext_resource type="Script" uid="uid://d2nbyklv2xlhc" path="res://Scripts/State/DoorState/TryDoor.cs" id="3_71d4q"]
+[ext_resource type="Script" uid="uid://cehbgl2hbg21c" path="res://Scripts/State/DoorState/CloseDoor.cs" id="4_tubmv"]
+[ext_resource type="Texture2D" uid="uid://b3l3em83grgtc" path="res://Assests/RetroUrban/Textures/planks.png" id="5_tewiu"]
+[ext_resource type="Script" uid="uid://djoc3ybxaloy3" path="res://Scripts/State/DoorState/OpenDoor.cs" id="5_x67q0"]
+[ext_resource type="Script" uid="uid://c0ep3e8m778u1" path="res://Scenes/DoorClick.cs" id="6_tubmv"]
+[ext_resource type="Script" uid="uid://ccvyjb5dtnbcn" path="res://Scripts/State/GlobalState/GlobalStateRegistry.cs" id="7_x67q0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lbjce"]
 sky_top_color = Color(0.4095782, 0.40585238, 0.46516585, 1)
@@ -41,7 +46,17 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 2.0835862, 0)
 [node name="TryDoor" parent="." unique_id=700289307 node_paths=PackedStringArray("states") instance=ExtResource("2_skn36")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.26455, 3.050001, -8.81917)
 script = ExtResource("3_71d4q")
-states = []
+states = [NodePath("States/ClosedDoor"), NodePath("States/OpenDoor")]
+
+[node name="Marker3D" type="Marker3D" parent="TryDoor" unique_id=351582262]
+
+[node name="States" type="Node" parent="TryDoor" unique_id=364963777]
+
+[node name="ClosedDoor" type="Node" parent="TryDoor/States" unique_id=901584137]
+script = ExtResource("4_tubmv")
+
+[node name="OpenDoor" type="Node" parent="TryDoor/States" unique_id=547692837]
+script = ExtResource("5_x67q0")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1405401052]
 transform = Transform3D(-0.011264496, 0, -0.9999366, 0, 1, 0, 0.9999366, 0, -0.011264496, 30.137785, 10.218751, 0)
@@ -66,3 +81,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_5q4c5")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=175009551]
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer" unique_id=459448357]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("5_tewiu")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("6_tubmv")
+
+[node name="GlobalStateRegistry" type="Node3D" parent="." unique_id=307704220]
+script = ExtResource("7_x67q0")
