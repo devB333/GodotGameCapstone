@@ -20,7 +20,7 @@ public partial class CameraSystem : Node3D
 	{
 		_pivot = GetNode<Node3D>("../CameraPivot");
 		_camera = GetNode<Camera3D>("../CameraPivot/SpringArm3D/Camera3D");
-		Input.MouseMode = Input.MouseModeEnum.Captured;// makes mouse go away
+		Input.MouseMode = Input.MouseModeEnum.Visible;// makes mouse go away
 		_camreaRotation = _pivot.Rotation.Y; // set rotation to inital point to stop sudden jerk when moving camera for the first time
 		//GD.Print(camreaRotation.X);
 	}
