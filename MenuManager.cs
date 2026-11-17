@@ -28,13 +28,11 @@ public partial class MenuManager : Node
 		if (IsMenuOpen)//Is the menu already open?
 			{
 				GetNode<Control>("../Menu").Visible = true;
-				Input.MouseMode = Input.MouseModeEnum.Visible;
 				GetTree().Paused = true;
 			}
 			else//Is the menu not open?
 			{
 				GetNode<Control>("../Menu").Visible = false;
-				Input.MouseMode = Input.MouseModeEnum.Captured;
 				GetTree().Paused = false;
 			}	
 	}
