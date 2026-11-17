@@ -31,7 +31,7 @@ public partial class OpenDoor : IState, IState.IOptionalTriggerStateChange
 	{
 		if (node is IStateParent stateParent)
 		{
-			base.switchState("CloseDoor");
+			base.switchState("closed");
 		}
 	}
 }

@@ -31,15 +31,25 @@ public partial class DoorClick : Anchor
 		
 		Show();
 		
-		GD.Print("dwadw");
+		
 	}
 
 	public override void OnClick()
 	{
+		try
+		{
+			IStateParent parent = globalStateRegistry.stateParents[target];
+		}
+		catch (Exception e)
+		{
+			GD.Print(e.ToString());
+		}
 		if (globalStateRegistry.stateParents.ContainsKey(target) &&
 		    globalStateRegistry.stateParents[target] is IParentTriggerStateChange stateParent)
 		{
+			
 			stateParent.parentTriggerStateChange();
 		}
+		
 	}
 }

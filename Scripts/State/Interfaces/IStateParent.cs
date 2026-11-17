@@ -9,6 +9,8 @@ public interface IStateParent
     public Godot.Collections.Array<IState> states { get; }
     public Dictionary<string, IState> stateNameMap { get; }
     public IState activeState { get; set; }
+
+    public GlobalStateRegistry globalStateRegistry { get; set; }
     
     /**
      * This will switch the state on the state parent
